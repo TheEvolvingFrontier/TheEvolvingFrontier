@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+        <title>FacilitySense Email</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="{{ url_for('static', filename='scripts/jquery.min.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='scripts/facScripts.js') }}"></script>
+        <script type="text/javascript">
+            $(function() {
+                useractions.start();
+            });
+        </script>
+</head>
+<body text-align="center">
+    <header>
+		<h4 class="mytitle">FacilitySense Email</h4>
+    </header>
+    <div class="ccont">
+    <div class="cont">
+        <div class="inputbox inputboxemail">
+            <a class="inputlabel">Email:</a>
+	    <input id="emailInput" type="text" class="inputtxt"/>
+        </div>
+        <button id="myemailbutton" class="mybutt">Send</button>
+    </div>
+    </div>
+</body>
+</html>

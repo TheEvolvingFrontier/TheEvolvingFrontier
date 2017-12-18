@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>FacilitySense Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="{{ url_for('static', filename='scripts/jquery.min.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='scripts/facScripts.js') }}"></script>
+        <script type="text/javascript">
+            $(function() {
+                useractions.start();
+            });
+        </script>
+		
+	<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: #981e32  ;
+  background-image: url(../static/images/CUBFirstFloor.PNG);
+  background-position: center;
+  background-size: 100% 100%;
+  
+  
+  opacity: 0.8;
+  padding: 10px;
+}
+.grid-item {
+  background-color: #e9e9e9;
+  opacity: 0.7;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 35px;
+  text-align: center;
+  
+}
+div.grid-item:hover {
+    opacity: 0.19
+}
+
+div.grid-item:button {
+
+}
+
+select {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px;
+    border-radius: 2px;
+    background-color: #f1f1f1;
+}
+
+
+#commentBox {
+  z-index: 3;
+  position: fixed;
+  top: 25%;
+  width: 100%
+}
+#innerCommBox {
+  border-style: solid;
+  border-width: 2px;
+  font-size: 8px;
+  border-radius: 20px;
+  background: #981e32;
+  opacity: 0.98;
+  padding: 20px;
+
+}
+
+</style>
+		
+</head>
+	<body text-align="center" >
+		<div id="commentBox" style="visibility: hidden;">
+			<div class="ccont">
+				<div id="innerCommBox" class="cont" background="green">
+					<h1> Comment entry box </h1>
+					<div>
+						<button align="right" id="postCom">Post Comment</button>
+	                                	<input id="comInput" align="left" width="400" type="text"/>
+					</div>
+                       			<h1> Please Indicate which area you are commenting on: </h1>		
+					<form>
+						<select id="Area" name="Area">
+							<option value="0">1: NW Bookie</option>
+							<option value="1">2: NE Bookie/N Food Court</option>
+							<option value="2">3: N Dining Area</option>
+							<option value="3">4: CUB Theatre Screen</option>
+							<option value="4">5: SW Bookie</option>
+							<option value="5">6: SE Bookie</option>
+							<option value="6">7: Office Space</option>
+							<option value="7">8: CUB Theatre Seating</option>
+							<option value="8">9: CUB Entrance/ Main Bathrooms</option>
+							<option value="9">10: CUB Lounge Area</option>
+							<option value="10">11: Quiet Study/ East Lounge</option>
+							<option value="11">12: CUB Theatre Bathrooms</option>
+						</select>
+					</form>
+					<h1 id="servComments"> comment area </h1>
+	        	        </div>
+			</div>
+                </div>
+
+		<header>
+
+			<h4 class="mytitle">Facility Sense MainPage:</h4>
+			<h4 class="mytitle">Building: Compton Union: First Floor</h4>
+
+			
+
+		</header>
+		<div class="ccont">
+			<div class="cont">
+				<button id="showComments">Press here to view the comment selection page.</button>
+				<!-- ORIGINAL IMAGE WIDTH AND HEIGHT HERE <img src="/static/images/CUBFirstFloor.PNG" alt="GENERIC IN CELL IMAGE" width="2923" height="1451"> -->
+				<div class="grid-container">
+					<div class="grid-item">1
+						<img src="/static/images/greenoverlayv1.png" alt="GREEN" width="28" height="28" align="right">
+					</div>
+					<div class="grid-item">2
+					<img src="/static/images/greenoverlayv1.png" alt="GREEN" width="28" height="28" align="right">
+					</div>
+					<div class="grid-item">3
+					
+					</div>  
+					<div class="grid-item">4
+					
+					</div>
+					<div class="grid-item">5
+					<img src="/static/images/greenoverlayv1.png" alt="GREEN" width="28" height="28" align="right">
+					</div>
+					<div class="grid-item">6
+					
+					</div>  
+					<div class="grid-item">7
+					<img src="/static/images/greenoverlayv1.png" alt="GREEN" width="28" height="28" align="right">
+					</div>
+					<div class="grid-item">8
+					
+					</div>
+					<div class="grid-item">9
+					<img src="/static/images/greenoverlayv1.png" alt="GREEN" width="28" height="28" align="right">
+					</div>  
+					<div class="grid-item">10
+					
+					</div> 
+					<div class="grid-item">11
+					<img src="/static/images/greenoverlayv1.png" alt="GREEN" width="28" height="28" align="right">
+					</div>
+					<div class="grid-item">12
+					
+					</div> 
+				</div>	
+				
+				<p id="mytitle">Hover your cursor over the Floorplan for a better view of an area.</p>
+
+			</div>
+		</div>
+	</body>
+
+</html>

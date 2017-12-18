@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FacilitySense Email</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='scripts/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/facScripts.js') }}"></script>
+    <script type="text/javascript">
+        $(function() {
+           useractions.start();
+        });
+    </script>
+</head>
+<body text-align="center">
+    <header>
+        <h4 class="mytitle">FacilitySense Account Information</h4>
+    </header>
+    <div class="ccont">
+        <div class="cont">
+            <div class="inputbox inputboxusrnm">
+                <label class="inputlabel">Username:</label>
+                <input id="usernameInput" type="text" class="inputtxt"/>
+            </div>
+            <div class="inputbox inputboxnewpwd">
+                <label class="inputlabel">Password:</label>
+                <input id="passwordInput" type="text" class="inputtxt"/>
+            </div>
+            <div class="inputbox inputboxnewpwdconf">
+                <label class="inputlabel">Confirm Password:</label>
+                <input id="confirmpasswordinput" type="text" class="inputtxt"/>
+            </div>
+            <div class="inputbox">
+                <label>We emailed you a confirmation code, please enter it below.</label>
+            </div>
+            <div class="inputbox inputboxemailcode">
+                <input id="codeinput" type="text" class="inputtxtcode"/>
+            </div>
+        <button id="verifyButton" class="mysubButt">Finish</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+        <title>FacilitySense login</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename='scripts/jquery.min.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='scripts/facScripts.js') }}"></script>
+        <script type="text/javascript">
+            $(function() {
+                useractions.start();
+            });
+        </script>
+
+</head>
+<body text-align="center">
+    <header>
+		<h4 class="mytitle">FacilitySense Login</h4>
+    </header>
+    <div class="ccont">
+    	<div class="cont">
+        	<div class="inputbox inputboxusr">
+            	<a class="inputlabel">Username:</a>
+	    		<input type="text" class="inputtxt"/>
+        	</div>
+        	<div class="inputbox inputboxpwd">
+            	<a class="inputlabel">Password:</a>
+	    		<input type="text" class="inputtxt"/>
+        	</div>
+        	<button id="log2fac" class="mybutt">Login</button>
+		<button id="log2new" class="myotherbutt">New Account</a>
+    	</div>
+    </div>
+</body>
+</html>

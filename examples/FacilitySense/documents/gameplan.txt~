@@ -1,0 +1,7 @@
+Frontend:
+
+use html/css/javascript. minimalist aestethic. focus on funcationality and style in order.
+
+Backend:
+
+Use Flask and therefore python. deploy to heroku, possibly somewhere else if we run into troble with sending emails form heroku

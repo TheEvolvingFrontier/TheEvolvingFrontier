@@ -1,0 +1,153 @@
+#comments.py - contains the code that runs the comments system.
+
+import os
+
+class comment():
+    username = ""
+    commentText = ""
+    time = ""
+    building = ""
+    floor = ""
+    location = ""
+    isGood = "Neutral"
+
+def addComment(username,commentText,time,building,floor,location,isGood):
+    newComment = comment()
+    newComment.username = username
+    newComment.commentText = commentText
+    newComment.time = time
+    newComment.building = building
+    newComment.floor = floor
+    newComment.location = location
+    newComment.isGood = isGood
+    return newComment
+
+
+
+def loadComments():
+
+    commentFile = open('comments.csv', 'r')
+
+    commentList = []
+
+    commentFileList = commentFile.readlines()
+
+    commentFile.close()
+
+    for comment in commentFileList:
+
+
+        templist = [x.strip() for x in comment.split(',')]
+
+
+
+        commentList.append(addComment(templist[0], templist[1], templist[2], templist[3], templist[4], templist[5], templist[6]))
+
+
+
+    return commentList 
+
+
+
+def storeComments(commentList):
+
+    commentFile = open('comments.csv', 'w')
+
+    print("now we write! the comments")
+
+    for comment in commentList:
+
+        print(comment)
+        print("another one")
+
+        commentFile.write(comment.username + "," + comment.commentText + "," + comment.time + "," + comment.building + "," + comment.floor + "," + comment.location + ","  + comment.isGood + os.linesep)
+
+
+
+    commentFile.close()
+
+
+def squareColor(location,commentlist,building,floor):# determines the color of a square. returns "green" "yellow" or "red"
+
+    squarelist = []#list of comments that contains only comments pertaining to this square
+
+    goodlist = []
+
+    badlist = []
+
+    for comment in commentlist:
+
+        if(comment.building == building and comment.location == location and comment.floor == floor):
+            squarelist.append(comment)
+
+    # now we filter those into good and bad
+
+    for comment in squarelist:
+
+        if comment.isGood == "Good":
+            goodlist.append(comment)
+
+        if comment.isGood == "Bad":
+            badlist.append(comment)
+
+    if (len(goodlist) < 5 or len(badlist) < 5):
+
+        return "Green"
+
+    ratio = len(goodlist)/len(badlist)
+
+    if ratio >= 1.5:
+
+        return "Green"
+
+    if ratio < 1.5 and ratio >= 1.0:
+
+        return "Yellow"
+
+    if ratio < 1:
+
+        return "Red"
+
+    
+
+    return "Green"
+
+
+def findComments(location,commentList,building,floor): # Finds comments for a building and floor. if location == "" returns all comments for that building and floor, else only returns comments for a particular location
+
+    ourlist = []
+
+    for comment in commentList:
+
+        if(comment.building == building and comment.floor == floor):
+
+            ourlist.append(comment)
+
+
+    ourfilteredlist = []
+
+
+    if(location == ""): #no location specified
+
+        return ourlist
+
+    else: #filter out comments not from that location
+
+        for comment in ourlist:
+
+            if(comment.location == location):
+
+                ourfilteredlist.append(comment)
+
+        return ourfilteredlist
+
+
+def formatCommentsForPrinting(commentList):
+
+    commentstring = ""
+
+    for comment in commentList:
+
+        commentstring = commentstring + comment.commentText + "\n"
+
+    return commentstring

@@ -1,0 +1,8 @@
+Frontend:
+
+use html/css/javascript. minimalist aestethic. focus on funcationality and style in order.
+
+Backend:
+
+Use Flask and therefore python. deploy to heroku, possibly somewhere else as a contingency plan if we run into troble with sending emails form heroku. We will start with the code from the Smile project and build upon it.
+

@@ -1,0 +1,5 @@
+This is the name and password of the email account that we created for the verification e-mail system.
+
+
+facilitysense.best322@gmail.com
+Password:computerscience322
