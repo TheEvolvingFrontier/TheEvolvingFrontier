@@ -1,0 +1,12 @@
+Fuckin with git
+  git add .
+  git merge
+  git commit
+  git pull
+  git status
+ 
+if you are working with branches
+  git branch
+  git checkout (put branch name here)
+  
+ Mix and match
