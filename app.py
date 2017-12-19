@@ -22,7 +22,7 @@ class Comments(db.Model):
 @app.route("/index.html")
 @app.route("/")
 def hello():
-    return render_template('./yourhtmlfilehere') #renember to put html in templates
+    return render_template('./index.html') #renember to put html in templates
 
 @app.route(base_url + 'setComments', methods=['POST'])
 def setComment():
